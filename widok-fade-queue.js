@@ -1,7 +1,7 @@
 const $ = require('cash-dom');
 const throttle = require('widok-throttle');
 
-function fadeQueueStart(options = {}) {
+module.exports = function fadeQueueStart(options = {}) {
   const opt = {
     delay: 100,
   };
@@ -89,4 +89,4 @@ function fadeQueueStart(options = {}) {
   window.addEventListener('load', fadeOnResize);
   window.addEventListener('resize', throttle(100, fadeOnResize));
   window.addEventListener('scroll', throttle(100, fadeOnScroll));
-}
+};
