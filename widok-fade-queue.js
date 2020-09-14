@@ -1,3 +1,4 @@
+const $ = require('cash-dom');
 const throttle = require('widok-throttle');
 
 window.fadeOnResize = () => fades.forEach(e => e.resize());
