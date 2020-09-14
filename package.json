@@ -1,0 +1,13 @@
+{
+  "name": "widok-fade-queue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "widok-fade-queue.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cash-dom": "^8.1.0",
+    "widok-throttle": "github:weterynarzfred/widok-throttle"
+  }
+}
