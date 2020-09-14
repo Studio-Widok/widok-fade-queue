@@ -6,6 +6,7 @@ module.exports = function fadeQueueStart(options = {}) {
     delay: 100,
   };
   Object.assign(opt, options);
+  const fadeOnResize = () => fades.forEach(e => e.resize());
   const fadeOnScroll = () => fades.forEach(e => e.check());
   const checkFadeQueue = () => {
     if (fadeQueue.length === 0) return;
