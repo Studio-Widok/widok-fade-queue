@@ -5,6 +5,7 @@ import throttle from 'widok-throttle';
  * @typedef {Object} options
  * @property {number} delay default = 100, delay between consequtive activations
  * @property {string} selector default = '.fade', selector of fading elements
+ * @property {number} screenPosition default = 1, portion of the screen where activation occurs
  */
 
 /**
@@ -16,6 +17,7 @@ function fadeQueueStart(options = {}) {
   const opt = {
     delay: 100,
     selector: '.fade',
+    screenPosition: 1,
   };
   Object.assign(opt, options);
   const fadeOnResize = () => fades.forEach(e => e.resize());
@@ -55,7 +57,10 @@ function fadeQueueStart(options = {}) {
         return false;
       }
 
-      if (this.offset < window.scrollY + window.innerHeight) {
+      if (
+        this.offset <
+        window.scrollY + window.innerHeight * opt.screenPosition
+      ) {
         this.activate();
         return true;
       }

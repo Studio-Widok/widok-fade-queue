@@ -1,5 +1,6 @@
 import fadeQueueStart from './../../../widok-fade-queue';
 
 fadeQueueStart({
-  delay: 50,
+  delay: 250,
+  screenPosition: 0.5,
 });
