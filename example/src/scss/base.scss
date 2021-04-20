@@ -1,0 +1,23 @@
+body {
+  padding-top: 80vh;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #eee;
+  color: #333;
+  font-size: 2em;
+
+  p {
+    max-width: 40rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .fade {
+    opacity: 0;
+    transition: 0.5s;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

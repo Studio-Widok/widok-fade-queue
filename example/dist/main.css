@@ -1,0 +1,1 @@
+body{padding-top:80vh;min-height:100vh;margin:0;background-color:#eee;color:#333;font-size:2em}body p{max-width:40rem;margin-right:auto;margin-left:auto}body .fade{opacity:0;transition:.5s}body .fade.active{opacity:1}

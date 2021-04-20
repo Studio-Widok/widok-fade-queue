@@ -1,9 +1,21 @@
 import $ from 'cash-dom';
 import throttle from 'widok-throttle';
 
+/**
+ * @typedef {Object} options
+ * @property {number} delay default = 100, delay between consequtive activations
+ * @property {string} selector default = '.fade', selector of fading elements
+ */
+
+/**
+ * Enables fading activation.
+ * @param {options} options
+ */
+
 function fadeQueueStart(options = {}) {
   const opt = {
     delay: 100,
+    selector: '.fade',
   };
   Object.assign(opt, options);
   const fadeOnResize = () => fades.forEach(e => e.resize());
@@ -82,7 +94,7 @@ function fadeQueueStart(options = {}) {
   const fadeQueue = [];
   const fades = [];
 
-  $('.fade').each((index, element) => {
+  $(opt.selector).each((index, element) => {
     fades.push(new Fade(element));
   });
   fades.sort((a, b) => a.order - b.order);
